@@ -1,0 +1,132 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+<meta name="viewport" content="width=device-width, initial-scale=1">  
+<style>
+    body{  
+  font-family: Calibri, Helvetica, sans-serif;  
+  background-color: pink;  
+}  
+.container {  
+    padding: 50px;  
+  background-color: lightblue;  
+}  
+
+div {  
+            padding: 10px 0;  
+         }  
+
+
+input[type=text], input[type=password], textarea {  
+  width: 100%;  
+  padding: 15px;  
+  margin: 5px 0 22px 0;  
+  display: inline-block;  
+  border: none;  
+  background: #f1f1f1;  
+} 
+
+</style> 
+
+<link rel="shortcut icon" href="#">
+</head>  
+<body>  
+<form action="./register" method="post">  
+  <div class="container">  
+  <center>  <h1> Student Registeration Form</h1> </center>  
+  <hr>  
+<label> Firstname </label>   
+<input type="text" id="first name" name="firstname" placeholder= "Firstname" size="15" required />   
+<label> Middlename: </label>   
+<input type="text" id="middle name" name="middlename" placeholder="Middlename" size="15" required />   
+<label> Lastname: </label>    
+<input type="text" id="last name" name="lastname" placeholder="Lastname" size="15"required />   
+<div>  
+<label>   
+Course :  
+</label>   
+  
+<select>  
+<option value="Course">Course</option>  
+<option value="BCA">BCA</option>  
+<option value="BBA">BBA</option>  
+<option value="B.Tech">B.Tech</option>  
+<option value="MBA">MBA</option>  
+<option value="MCA">MCA</option>  
+<option value="M.Tech">M.Tech</option>  
+</select>  
+</div>  
+<div>  
+<label>   
+Gender :  
+</label><br>  
+<input type="radio" value="Male" name="gender" checked > Male   
+<input type="radio" value="Female" name="gender"> Female   
+<input type="radio" value="Other" name="gender"> Other  
+  
+</div>  
+<label>   
+Phone :  
+</label>  
+<input type="text" name="country code" placeholder="Country Code"  value="+91" size="2"/>   
+<input type="text" id="phone" name="phone" placeholder="phone no." size="10" required>   
+Current Address :  
+<textarea id="address" cols="80" rows="5" placeholder="Current Address"  value="address" required>  
+</textarea>  
+ <label for="email"><b>Email</b></label>  
+ <input type="text" id="mail" placeholder="Enter Email" name="email" required>  
+  
+    <label for="psw"><b>Password</b></label>  
+    <input id="psw" type="password" placeholder="Enter Password" name="psw" required>  
+  
+    <label for="psw-repeat"><b>Re-type Password</b></label>  
+    <input id="pswr" type="password" placeholder="Retype Password" name="psw-repeat" required>  
+    <input type="submit" value="submit" class="registerbtn" onclick="ValidateEmail();"></input>    
+</form> 
+
+    <script>
+        function ValidateEmail() 
+            {
+                let mail = document.getElementById("mail").value;
+                let phone = document.getElementById("phone").value;
+                let firstname = document.getElementById("first name").value;
+                
+                let lastname = document.getElementById("last name").value;
+                let current_address = document.getElementById("address").value;
+
+                let password = document.getElementById("psw").value;
+                let password_repeat = document.getElementById("pswr").value;
+               
+
+            if (!(/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/.test(mail)))
+            alert("You have entered an invalid email address!");
+
+            if (!(/^[6-9]\d{9}$/gi.test(phone)))
+            alert("You have entered an invalid phone")
+
+            if (firstname==null || firstname=="")
+            alert("first name cananot be blank");
+
+            if (lastname==null || lastname=="")
+            alert("last name cananot be blank");
+
+            if (current_address==null || current_address=="")
+            alert("address cananot be blank");
+
+            if (password==null || password=="")
+            alert("password cananot be blank");
+
+            if(password!=password_repeat)
+            alert("password do not matches");
+
+            }
+
+            
+            
+
+            
+
+    </script>
+
+</body>  
+</html>  
